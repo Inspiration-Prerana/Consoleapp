@@ -50,4 +50,34 @@ namespace ClassLibraryTest.Computer
             return str;
         }
     }
+
+    public class CustomStack
+    {
+        private int[] _container=new int[0];
+
+        public int Count { get { return _container.Length; } }
+        public void Push(int a)
+        {
+            Array.Resize(ref _container, _container.Length + 1);
+            _container[_container.Length - 1] = a;
+        }
+
+        public int Pop()
+        {
+            int ret=0;
+            if (_container.Length>=0)
+            {
+                ret = _container[_container.Length - 1];
+                Array.Resize(ref _container, _container.Length - 1);
+            }
+
+            return ret;
+        }
+
+        public string DisplayAll()
+        {
+            string str = string.Join(",", _container);
+            return str;
+        }
+    }
 }
