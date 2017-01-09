@@ -26,7 +26,7 @@ namespace Consoleapp
             //r1.Breadth = 12;
             //Console.WriteLine($"Area : {r1.Area}\nPerimeter : {r1.Perimeter}");
 
-            c1.Stack stack = new c1.Stack();
+            c1.Stack stack = new c1.Stack(5);
 
             Console.WriteLine($"Number of items : {stack.Count}, TotalItems : {stack.DisplayAll()}");
 
@@ -35,6 +35,8 @@ namespace Consoleapp
             stack.Push(10);
             Console.WriteLine($"Number of items : {stack.Count}, TotalItems : {stack.DisplayAll()}");
             stack.Push(14);
+            stack.Push(3);
+            stack.Push(3);
             stack.Push(3);
             Console.WriteLine($"Number of items : {stack.Count}, TotalItems : {stack.DisplayAll()}");
             stack.Pop();

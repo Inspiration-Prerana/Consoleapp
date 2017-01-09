@@ -8,14 +8,19 @@ namespace ClassLibraryTest.Computer
 {
     public class Stack
     {
-        private int[] _container = new int[10];
+        private int[] _container;
         private int count = 0;
 
+
+        public Stack(int Size)
+        {
+            _container = new int[Size];
+        }
         public int Count { get { return count; } }
 
         public void Push(int a)
         {
-            if (count<10)
+            if (count<_container.Length)
             {
                 _container[count] = a;
                 count++;
@@ -28,8 +33,8 @@ namespace ClassLibraryTest.Computer
             int ret = 0;
             if (count>=0)
             {
-                ret = _container[count];
-                _container[count] = 0;
+                ret = _container[count-1];
+                _container[count-1] = 0;
                 count--;
             }
 
